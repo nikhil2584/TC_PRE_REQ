@@ -5,7 +5,6 @@
 USER root
 
 RUN mkdir /opt/tomcat/
-#WORKDIR /opt/tomcat/
 ENV WORKPATH /opt/tomcat/
 WORKDIR $WORKPATH
 
@@ -24,6 +23,4 @@ ENV PATH $PATH:$CATALINA_HOME/bin:$CATALINA_HOME/lib
 
 EXPOSE 8080
 RUN chmod -R 777 /opt/tomcat/bin
-#ENTRYPOINT ["/opt/tomcat/bin"]
-#CMD ["catalina.sh" "-D", "FOREGROUND"]
 CMD ["catalina.sh", "run"]
